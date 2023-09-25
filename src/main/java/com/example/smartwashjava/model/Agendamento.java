@@ -31,8 +31,6 @@ public class Agendamento extends AgendamentoTemplate {
         super();
     }
 
-    // garante que uma classe tenha apenas uma instância e
-    // fornece um ponto de acesso global para essa instância
     public static Agendamento getInstance() {
         if (instancia == null) {
             instancia = new Agendamento();
@@ -47,7 +45,7 @@ public class Agendamento extends AgendamentoTemplate {
 
     @Override
     protected void definirVeiculos(Agendamento agendamento, List<Veiculo> veiculos) {
-        if (veiculos != null) {
+        if (!veiculos.isEmpty()) {
             agendamento.setVeiculos(veiculos);
         } else {
             throw new ExceptionNull("A lista de veículos não pode ser nula.");
@@ -56,7 +54,7 @@ public class Agendamento extends AgendamentoTemplate {
 
     @Override
     protected void definirServicos(Agendamento agendamento, List<Servico> servicos) {
-        if (servicos != null) {
+        if (!servicos.isEmpty()) {
             agendamento.setServicos(servicos);
         } else {
             throw new ExceptionNull("A lista de serviços não pode ser nula.");
@@ -65,7 +63,7 @@ public class Agendamento extends AgendamentoTemplate {
 
     @Override
     protected void definirFuncionarios(Agendamento agendamento, List<Proprietario> funcionarios) {
-        if (funcionarios != null) {
+        if (!funcionarios.isEmpty()) {
             agendamento.setFuncionarios(funcionarios);
         } else {
             throw new ExceptionNull("A lista de funcionários não pode ser nula.");
