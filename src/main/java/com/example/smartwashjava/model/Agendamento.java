@@ -39,11 +39,6 @@ public class Agendamento extends AgendamentoTemplate {
     }
 
     @Override
-    protected Agendamento criarAgendamento() {
-        return new Agendamento();
-    }
-
-    @Override
     protected void definirVeiculos(Agendamento agendamento, List<Veiculo> veiculos) {
         if (!veiculos.isEmpty()) {
             agendamento.setVeiculos(veiculos);
@@ -95,6 +90,11 @@ public class Agendamento extends AgendamentoTemplate {
         } else {
             throw new ExceptionNull("A data de saída não pode ser nula.");
         }
+    }
+
+    @Override
+    protected Agendamento criarAgendamento() {
+        return getInstance();
     }
 
 }
