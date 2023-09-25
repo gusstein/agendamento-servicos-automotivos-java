@@ -1,5 +1,6 @@
 package com.example.smartwashjava.model;
 
+import com.example.smartwashjava.exception.ExceptionNull;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -30,7 +31,8 @@ public class Agendamento extends AgendamentoTemplate {
         super();
     }
 
-    // garante que uma classe tenha apenas uma instância e fornece um ponto de acesso global para essa instância
+    // garante que uma classe tenha apenas uma instância e
+    // fornece um ponto de acesso global para essa instância
     public static Agendamento getInstance() {
         if (instancia == null) {
             instancia = new Agendamento();
@@ -45,32 +47,56 @@ public class Agendamento extends AgendamentoTemplate {
 
     @Override
     protected void definirVeiculos(Agendamento agendamento, List<Veiculo> veiculos) {
-        agendamento.setVeiculos(veiculos);
+        if (veiculos != null) {
+            agendamento.setVeiculos(veiculos);
+        } else {
+            throw new ExceptionNull("A lista de veículos não pode ser nula.");
+        }
     }
 
     @Override
     protected void definirServicos(Agendamento agendamento, List<Servico> servicos) {
-        agendamento.setServicos(servicos);
+        if (servicos != null) {
+            agendamento.setServicos(servicos);
+        } else {
+            throw new ExceptionNull("A lista de serviços não pode ser nula.");
+        }
     }
 
     @Override
     protected void definirFuncionarios(Agendamento agendamento, List<Proprietario> funcionarios) {
-        agendamento.setFuncionarios(funcionarios);
+        if (funcionarios != null) {
+            agendamento.setFuncionarios(funcionarios);
+        } else {
+            throw new ExceptionNull("A lista de funcionários não pode ser nula.");
+        }
     }
 
     @Override
     protected void definirPreco(Agendamento agendamento, Long preco) {
-        agendamento.setPreco(preco);
+        if (preco != null) {
+            agendamento.setPreco(preco);
+        } else {
+            throw new ExceptionNull("O preço não pode ser nulo.");
+        }
     }
 
     @Override
     protected void definirDataEntrada(Agendamento agendamento, Date dataEntrada) {
-        agendamento.setDataEntrada(dataEntrada);
+        if (dataEntrada != null) {
+            agendamento.setDataEntrada(dataEntrada);
+        } else {
+            throw new ExceptionNull("A data de entrada não pode ser nula.");
+        }
     }
 
     @Override
     protected void definirDataSaida(Agendamento agendamento, Date dataSaida) {
-        agendamento.setDataSaida(dataSaida);
+        if (dataSaida != null) {
+            agendamento.setDataSaida(dataSaida);
+        } else {
+            throw new ExceptionNull("A data de saída não pode ser nula.");
+        }
     }
 
 }

@@ -5,7 +5,6 @@ import java.util.List;
 
 public abstract class AgendamentoTemplate {
 
-    // Método de template que coordena o agendamento
     public final Agendamento agendar(List<Veiculo> veiculos, List<Servico> servicos, List<Proprietario> funcionarios, Long preco, Date dataEntrada, Date dataSaida) {
         Agendamento agendamento = criarAgendamento();
         definirVeiculos(agendamento, veiculos);
