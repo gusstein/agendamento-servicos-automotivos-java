@@ -62,27 +62,27 @@ public class SmartWashJavaApplication {
 			servico4.setAvaliacao(4L);
 			servicoRepository.save(servico4);
 
-			Servico servico5 = new Servico();
-			servico5.setNome("Higienização de estofados");
-			servico5.setPreco(200L);
-			servico5.setDescricao("Higienização completa dos estofados do veículo");
-			servico5.setDuracao("120");
-			servico5.setAvaliacao(5L);
-			servicoRepository.save(servico5);
-
-			Servico servico6 = new Servico();
-			servico6.setNome("Lavagem a seco");
-			servico6.setPreco(150L);
-			servico6.setDescricao("Lavagem a seco do veículo");
-			servico6.setDuracao("60");
-			servico6.setAvaliacao(4L);
-			servicoRepository.save(servico6);
+//			Servico servico5 = new Servico();
+//			servico5.setNome("Higienização de estofados");
+//			servico5.setPreco(200L);
+//			servico5.setDescricao("Higienização completa dos estofados do veículo");
+//			servico5.setDuracao("120");
+//			servico5.setAvaliacao(5L);
+//			servicoRepository.save(servico5);
+//
+//			Servico servico6 = new Servico();
+//			servico6.setNome("Lavagem a seco");
+//			servico6.setPreco(150L);
+//			servico6.setDescricao("Lavagem a seco do veículo");
+//			servico6.setDuracao("60");
+//			servico6.setAvaliacao(4L);
+//			servicoRepository.save(servico6);
 
 			Usuario usuario = new Usuario();
 			usuario.setCpf("123456789");
 			usuario.setId(0L);
 			usuario.setSenha("123");
-			usuario.setNome("gustavo");
+			usuario.setNome("Robson");
 			usuario.setEmail("proprietario");
 			usuario.setEmpresa(true);
 			usuarioRepository.save(usuario);
@@ -91,18 +91,11 @@ public class SmartWashJavaApplication {
 			usuar.setCpf("123456789");
 			usuar.setId(0L);
 			usuar.setSenha("123");
-			usuar.setNome("gustavoStein");
+			usuar.setNome("Frederico");
 			usuar.setEmail("cliente");
 			usuar.setEmpresa(false);
 			usuarioRepository.save(usuar);
 
-			Veiculo veiculo = new Veiculo();
-			veiculo.setAno("2022");
-			veiculo.setModelo("F-28");
-			veiculo.setMarca("Ferrari");
-			veiculo.setCarroceria("Coupé");
-			veiculo.setPlaca("ABC-1234");
-			veiculoRepository.save(veiculo);
 
 
 //			// Criando lista de serviços e adicionando os objetos criados
